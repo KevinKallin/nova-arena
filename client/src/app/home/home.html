@@ -1,0 +1,23 @@
+<ion-content class="home" fullscreen>
+  <div class="hero">
+    <div class="logo">
+      <ion-icon name="planet"></ion-icon>
+      <h1>NOVA ARENA</h1>
+      <p>Collect the orbs. Grow your ship. Rule the arena.</p>
+    </div>
+
+    <ion-item class="name-field" lines="full">
+      <ion-input
+        [(ngModel)]="name"
+        placeholder="Enter your callsign"
+        maxlength="16"
+        (keyup.enter)="play()"
+      ></ion-input>
+    </ion-item>
+
+    <ion-button class="play" expand="block" size="large" (click)="play()">
+      <ion-icon slot="start" name="play"></ion-icon>
+      Launch
+    </ion-button>
+  </div>
+</ion-content>

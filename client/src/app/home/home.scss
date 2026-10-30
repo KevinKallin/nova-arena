@@ -1,0 +1,53 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.home {
+  --background: radial-gradient(circle at 50% 18%, #141a36 0%, #070a14 60%);
+}
+
+.hero {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 32px;
+  text-align: center;
+}
+
+.logo ion-icon {
+  font-size: 88px;
+  color: #7df9ff;
+  filter: drop-shadow(0 0 24px rgba(125, 249, 255, 0.5));
+}
+
+.logo h1 {
+  margin: 12px 0 8px;
+  font-size: 40px;
+  letter-spacing: 8px;
+  background: linear-gradient(90deg, #7df9ff, #8c9eff, #ff8fd8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.logo p {
+  margin: 0;
+  color: #96a3cf;
+  font-size: 15px;
+  max-width: 320px;
+}
+
+.name-field {
+  width: min(360px, 100%);
+  --background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+}
+
+.play {
+  width: min(360px, 100%);
+  margin-top: 8px;
+}

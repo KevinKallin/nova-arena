@@ -1,0 +1,57 @@
+<div class="page">
+  <ion-toolbar>
+    <ion-title>Nova Arena</ion-title>
+    <ion-button slot="end" fill="clear" (click)="leave()">
+      <ion-icon name="close"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+
+  <div class="arena">
+    <canvas #canvas></canvas>
+
+    <div class="hud">
+      <span class="hud-name">{{ game.me()?.name ?? '—' }}</span>
+      <span class="hud-score">{{ game.me()?.score ?? 0 }} pts</span>
+    </div>
+
+    <aside class="scores">
+      <div class="scores-title">
+        <ion-icon name="trophy"></ion-icon>
+        Leaderboard
+      </div>
+      <ion-list lines="none">
+        @for (p of top(); track p.id; let i = $index) {
+          <ion-item [class.me]="p.id === game.myId()">
+            <span class="rank">{{ i + 1 }}</span>
+            <span class="dot" [style.background]="p.color"></span>
+            <ion-label>{{ p.name }}</ion-label>
+            <ion-note slot="end">{{ p.score }}</ion-note>
+          </ion-item>
+        }
+      </ion-list>
+    </aside>
+
+    <div
+      class="joystick"
+      (pointerdown)="joyDown($event)"
+      (pointermove)="joyMove($event)"
+      (pointerup)="joyUp($event)"
+      (pointercancel)="joyUp($event)"
+    >
+      <div class="knob" [style.transform]="knobTransform"></div>
+    </div>
+  </div>
+
+  @if (connecting) {
+    <div class="overlay">
+      <ion-spinner name="crescent"></ion-spinner>
+      <p>Connecting to the arena…</p>
+    </div>
+  } @else if (error) {
+    <div class="overlay">
+      <p class="err">{{ error }}</p>
+      <ion-button (click)="connect()">Retry</ion-button>
+      <ion-button fill="outline" (click)="leave()">Back</ion-button>
+    </div>
+  }
+</div>

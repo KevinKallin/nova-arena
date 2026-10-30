@@ -1,0 +1,40 @@
+# ---- Build outputs ----
+**/bin/
+**/obj/
+node_modules/
+dist/
+out/
+www/
+.angular/
+
+# ---- .NET ----
+*.user
+*.suo
+
+# ---- Capacitor / Android ----
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/captures/
+android/*.iml
+android/app/src/main/assets/public/
+*.keystore
+*.jks
+
+# ---- iOS (add later) ----
+ios/App/Pods/
+ios/DerivedData/
+
+# ---- Logs / env ----
+*.log
+.env
+.env.*
+!.env.example
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

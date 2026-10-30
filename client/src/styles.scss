@@ -1,0 +1,34 @@
+:root {
+  color-scheme: dark;
+
+  --ion-background-color: #070a14;
+  --ion-background-color-rgb: 7, 10, 20;
+  --ion-text-color: #e7ecff;
+  --ion-text-color-rgb: 231, 236, 255;
+
+  --ion-color-primary: #4facfe;
+  --ion-color-primary-rgb: 79, 172, 254;
+  --ion-color-primary-contrast: #07101f;
+  --ion-color-primary-contrast-rgb: 7, 16, 31;
+  --ion-color-primary-shade: #4697e0;
+  --ion-color-primary-tint: #61b4fe;
+
+  --ion-toolbar-background: #0a0e1c;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #04060f;
+  -webkit-tap-highlight-color: transparent;
+}
+
+ion-app,
+ion-router-outlet {
+  display: block;
+  height: 100%;
+}
